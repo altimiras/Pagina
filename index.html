@@ -6,13 +6,12 @@
     <title>Altimiras Chile - Espacio Personal</title>
     <style>
         :root {
-            --bg-color: #0b0f19;
-            --card-bg: rgba(26, 32, 44, 0.7);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --text-main: #f7fafc;
-            --text-muted: #a0aec0;
-            --accent: #3182ce;
-            --accent-glow: rgba(49, 130, 206, 0.3);
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --border-color: #2c2c2c;
+            --text-main: #e0e0e0;
+            --text-muted: #9e9e9e;
+            --accent: #d4af37;
         }
 
         body {
@@ -28,11 +27,13 @@
             text-align: center;
             max-width: 800px;
             margin: 0 auto 50px auto;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 30px;
         }
 
         header h1 {
             font-size: clamp(2.2rem, 1.8rem + 1.5vw, 3rem);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: #ffffff;
             letter-spacing: -0.5px;
         }
@@ -45,18 +46,17 @@
         .grid-secciones {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            gap: 25px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .tarjeta {
             background-color: var(--card-bg);
-            backdrop-filter: blur(12px);
-            border-radius: 18px;
+            border-radius: 12px;
             overflow: hidden;
-            border: 1px solid var(--card-border);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            border: 1px solid var(--border-color);
+            transition: transform 0.25s ease, background-color 0.25s ease;
             display: flex;
             flex-direction: column;
             text-decoration: none;
@@ -64,47 +64,46 @@
         }
 
         .tarjeta:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 15px 35px var(--accent-glow);
-            border-color: rgba(49, 130, 206, 0.4);
+            transform: translateY(-4px);
+            background-color: #252525;
+            border-color: #444444;
         }
 
         .contenedor-imagen {
             width: 100%;
-            height: 190px;
+            height: 180px;
             overflow: hidden;
-            background-color: #1a202c;
+            background-color: #181818;
         }
 
         .tarjeta img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
-            opacity: 0.85;
+            filter: brightness(0.9);
+            transition: filter 0.3s ease;
         }
 
         .tarjeta:hover img {
-            transform: scale(1.05);
-            opacity: 1;
+            filter: brightness(1);
         }
 
         .contenido-tarjeta {
-            padding: 24px;
+            padding: 22px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
 
         .contenido-tarjeta h3 {
-            font-size: 1.35rem;
-            margin: 0 0 10px 0;
-            color: #63b3ed;
+            font-size: 1.3rem;
+            margin: 0 0 8px 0;
+            color: #ffffff;
         }
 
         .contenido-tarjeta p {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 0.95rem;
             margin: 0;
             line-height: 1.5;
         }
@@ -115,7 +114,7 @@
             padding: 25px;
             color: var(--text-muted);
             font-size: 0.9rem;
-            border-top: 1px solid var(--card-border);
+            border-top: 1px solid var(--border-color);
             max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
@@ -125,52 +124,52 @@
 <body>
 
     <header>
-        <h1>Altimiras Chile</h1>
-        <p>Bitácora personal, memorias, herramientas y proyectos sonoros</p>
+        <h1>José Altimiras Lampré</h1>
+        <p>Espacio personal, genealogía y proyectos musicales</p>
     </header>
 
     <main class="grid-secciones">
-        <!-- 1. Blog -->
-        <a href="blog.html" class="tarjeta">
-            <div class="contenedor-imagen">
-                <img src="https://picsum.photos/400/250?random=1" alt="Bitácora y Relatos">
-            </div>
-            <div class="contenido-tarjeta">
-                <h3>Bitácora y Relatos</h3>
-                <p>Memorias, reflexiones y artículos ordenados cronológicamente sobre vivencias y caminos recorridos.</p>
-            </div>
-        </a>
-
-        <!-- 2. Herramientas -->
-        <a href="https://altimiras.github.io/HH/VISOR CANCIONES.html" class="tarjeta">
-            <div class="contenedor-imagen">
-                <img src="https://picsum.photos/400/250?random=2" alt="Laboratorio Sonoro">
-            </div>
-            <div class="contenido-tarjeta">
-                <h3>Laboratorio Sonoro</h3>
-                <p>Utilidades interactivas, configuraciones técnicas y recursos desarrollados a medida.</p>
-            </div>
-        </a>
-
-        <!-- 3. Genealogía -->
-        <a href="https://altimiras.github.io/HH/O'Higgins.html" class="tarjeta">
-            <div class="contenedor-imagen">
-                <img src="https://picsum.photos/400/250?random=3" alt="Raíces y Memoria">
-            </div>
-            <div class="contenido-tarjeta">
-                <h3>Raíces y Memoria</h3>
-                <p>Un recorrido por la historia familiar, antepasados y la trama de orígenes que nos sostiene.</p>
-            </div>
-        </a>
-
-        <!-- 4. Música -->
+        <!-- Tarjeta 1: Genealogía / Blog -->
         <a href="https://altimiras.github.io/Z/" class="tarjeta">
             <div class="contenedor-imagen">
-                <img src="fot/ritmos.jpg" alt="Composiciones y Acordes">
+                <img src="fot/blog.jpg" alt="Genealogía y Blog">
             </div>
             <div class="contenido-tarjeta">
-                <h3>Composiciones y Acordes</h3>
-                <p>Exploraciones sonoras, arreglos y proyectos musicales creados a lo largo del tiempo.</p>
+                <h3>Genealogía</h3>
+                <p>Blog de temas de interés.</p>
+            </div>
+        </a>
+
+        <!-- Tarjeta 2: Árbol Genealógico -->
+        <a href="https://altimiras.github.io/Z/" class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="fot/arbol.jpg" alt="Árbol Genealógico">
+            </div>
+            <div class="contenido-tarjeta">
+                <h3>Árbol Genealógico</h3>
+                <p>Árbol con 15.000 para ver o descargar.</p>
+            </div>
+        </a>
+
+        <!-- Tarjeta 3: Cancionero -->
+        <a href="https://altimiras.github.io/Z/" class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="fot/canción.jpg" alt="Cancionero">
+            </div>
+            <div class="contenido-tarjeta">
+                <h3>Cancionero</h3>
+                <p>Letra y acorde de canciones.</p>
+            </div>
+        </a>
+
+        <!-- Tarjeta 4: Música propia -->
+        <a href="https://altimiras.github.io/Z/" class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="fot/ritmos.jpg" alt="Música propia">
+            </div>
+            <div class="contenido-tarjeta">
+                <h3>Música propia</h3>
+                <p>Canciones y música x José Altimiras Lampré.</p>
             </div>
         </a>
     </main>
