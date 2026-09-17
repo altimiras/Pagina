@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Altimiras Chile - Blog Personal</title>
+    <title>Altimiras Chile - Espacio Personal</title>
     <style>
         :root {
-            --bg-color: #f9f9fb;
+            --bg-color: #f4f5f7;
             --card-bg: #ffffff;
-            --text-color: #222222;
+            --text-color: #2c3e50;
+            --text-muted: #555555;
             --accent-color: #0056b3;
-            --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.15rem);
-            --font-size-title: clamp(1.2rem, 1.1rem + 0.5vw, 1.5rem);
+            --border-color: #e2e8f0;
+            --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.1rem);
+            --font-size-title: clamp(1.25rem, 1.1rem + 0.5vw, 1.45rem);
         }
 
         body {
@@ -20,63 +22,79 @@
             color: var(--text-color);
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
+            padding: 30px 20px;
         }
 
         header {
             text-align: center;
-            margin-bottom: 40px;
-            padding: 20px 0;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
         }
 
         header h1 {
-            font-size: clamp(2rem, 1.5rem + 1.5vw, 2.8rem);
-            margin-bottom: 10px;
+            font-size: clamp(2.2rem, 1.8rem + 1.5vw, 3rem);
+            margin-bottom: 12px;
             color: var(--accent-color);
+            letter-spacing: -0.5px;
         }
 
         header p {
-            color: #555;
+            color: var(--text-muted);
             font-size: var(--font-size-base);
         }
 
-        /* Cuadrícula de contenidos */
-        .grid-temas {
+        /* Contenedor principal en cuadrícula flexible */
+        .grid-secciones {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            max-width: 1100px;
+            gap: 30px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* Tarjeta de cada tema o sección */
-        .tarjeta-tema {
+        /* Diseño de cada tarjeta con micro-interacciones */
+        .tarjeta {
             background-color: var(--card-bg);
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             flex-direction: column;
             text-decoration: none;
             color: inherit;
         }
 
-        .tarjeta-tema:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        .tarjeta:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
         }
 
-        .tarjeta-tema img {
+        /* Contenedor de imagen con efecto de zoom suave */
+        .contenedor-imagen {
             width: 100%;
-            height: 180px;
+            height: 190px;
+            overflow: hidden;
+            background-color: #e2e8f0;
+        }
+
+        .tarjeta img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            background-color: #e1e1e1;
+            transition: transform 0.5s ease;
+        }
+
+        .tarjeta:hover img {
+            transform: scale(1.05);
         }
 
         .contenido-tarjeta {
-            padding: 20px;
-            font-size: var(--font-size-base);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .contenido-tarjeta h3 {
@@ -86,17 +104,22 @@
         }
 
         .contenido-tarjeta p {
-            color: #555555;
+            color: var(--text-muted);
+            font-size: var(--font-size-base);
             margin: 0;
+            line-height: 1.5;
         }
 
         footer {
             text-align: center;
-            margin-top: 60px;
-            padding: 20px;
-            color: #777;
+            margin-top: 70px;
+            padding: 25px;
+            color: #888888;
             font-size: 0.9rem;
-            border-top: 1px solid #e1e1e1;
+            border-top: 1px solid var(--border-color);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
@@ -104,34 +127,51 @@
 
     <header>
         <h1>Altimiras Chile</h1>
-        <p>Espacio personal de contenidos, herramientas y proyectos</p>
+        <p>Bitácora personal, memorias, herramientas y proyectos sonoros</p>
     </header>
 
-    <main class="grid-temas">
-        <!-- Tarjeta 1: Tu Blog / Artículos -->
-        <a href="blog.html" class="tarjeta-tema">
-            <img src="https://picsum.photos/400/250?random=1" alt="Imagen de Artículos">
+    <main class="grid-secciones">
+        <!-- 1. Blog / Entradas migradas -->
+        <a href="blog.html" class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="https://picsum.photos/400/250?random=1" alt="Bitácora y Relatos">
+            </div>
             <div class="contenido-tarjeta">
-                <h3>Artículos y Relatos</h3>
-                <p>Accede a las publicaciones, reflexiones y textos organizados cronológicamente.</p>
+                <h3>Bitácora y Relatos</h3>
+                <p>Memorias, reflexiones y artículos ordenados cronológicamente sobre vivencias y caminos recorridos.</p>
             </div>
         </a>
 
-        <!-- Tarjeta 2: Enlace a tu Subdominio de Herramientas -->
-        <a href="https://herramientas.altimiras-chile.cl" class="tarjeta-tema">
-            <img src="https://picsum.photos/400/250?random=2" alt="Imagen de Herramientas">
+        <!-- 2. Herramientas musicales -->
+        <a href="https://herramientas.altimiras-chile.cl" class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="https://picsum.photos/400/250?random=2" alt="Laboratorio Sonoro">
+            </div>
             <div class="contenido-tarjeta">
-                <h3>Utilidades y Herramientas</h3>
-                <p>Aplicaciones web y herramientas prácticas desarrolladas a medida.</p>
+                <h3>Laboratorio Sonoro</h3>
+                <p>Utilidades interactivas, configuraciones técnicas y recursos desarrollados a medida.</p>
             </div>
         </a>
 
-        <!-- Tarjeta 3: Enlace a tu Subdominio de Música -->
-        <a href="https://musica.altimiras-chile.cl" class="tarjeta-tema">
-            <img src="https://picsum.photos/400/250?random=3" alt="Imagen de Música">
+        <!-- 3. Árbol genealógico -->
+        <a href="genealogia.html" class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="https://picsum.photos/400/250?random=3" alt="Raíces y Memoria">
+            </div>
             <div class="contenido-tarjeta">
-                <h3>Espacio Musical</h3>
-                <p>Explora composiciones, arreglos y producciones sonoras.</p>
+                <h3>Raíces y Memoria</h3>
+                <p>Un recorrido por la historia familiar, antepasados y la trama de orígenes que nos sostiene.</p>
+            </div>
+        </a>
+
+        <!-- 4. Creaciones musicales -->
+        <a href="https://musica.altimiras-chile.cl" class="tarjeta">
+            <div class="contenedor-imagen">
+                <img src="https://picsum.photos/400/250?random=4" alt="Composiciones y Acordes">
+            </div>
+            <div class="contenido-tarjeta">
+                <h3>Composiciones y Acordes</h3>
+                <p>Exploraciones sonoras, arreglos y proyectos musicales creados a lo largo del tiempo.</p>
             </div>
         </a>
     </main>
