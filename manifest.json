@@ -1,7 +1,7 @@
 {
   "name": "José Altimiras Lampré",
   "short_name": "web personal",
-    "start_url": "/",
+    "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#1e1e1e",
   "theme_color": "#c46d4e",
