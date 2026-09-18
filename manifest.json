@@ -1,0 +1,20 @@
+{
+  "name": "José Altimiras Lampré l",
+  "short_name": "web personal",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#1e1e1e",
+  "theme_color": "#c46d4e",
+  "icons": [
+    {
+      "src": "foto/icono-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "foto/icono-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
