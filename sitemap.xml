@@ -8,8 +8,6 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Si tienes más secciones o herramientas en tu web, agrégalas aquí abajo como este ejemplo: -->
-  <!--
   <url>
     <loc>https://altimiras-chile.cl/Blog/index.html</loc>
     <lastmod>2026-09-25</lastmod>
